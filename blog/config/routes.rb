@@ -12,6 +12,10 @@ Blog::Application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
     get 'posts/:format' => 'posts#index'
 
+    resources :posts do
+      resources :comments
+    end
+    
   #posts GET    /posts(.:format)          posts#index
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
